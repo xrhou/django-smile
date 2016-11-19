@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.utils.encoding import python_2_unicode_compatible
 
 
-# Create your models here.
+# Create Question models here.
 @python_2_unicode_compatible
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
@@ -20,6 +20,7 @@ class Question(models.Model):
         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
+# Create Choice models here.
 @python_2_unicode_compatible
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
