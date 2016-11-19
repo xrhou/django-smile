@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 
+import datetime
+
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
-from datetime import timedelta
+from django.utils.encoding import python_2_unicode_compatible
 
 
 # Create your models here.
@@ -16,7 +17,7 @@ class Question(models.Model):
         return self.question_text
 
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - timedelta(days=1)
+        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
 @python_2_unicode_compatible
