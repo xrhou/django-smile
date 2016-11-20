@@ -27,10 +27,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
-
+# python user PRC . 'modernrpc',
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',
-    'modernrpc',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
