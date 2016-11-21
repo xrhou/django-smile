@@ -43,7 +43,7 @@ try:
     #     print(result)
 
     with connection.cursor() as cursor:
-        # find all
+        # read all date
         sql = "select * from houxrusers "
         cursor.execute(sql)
         result = cursor.fetchall()
