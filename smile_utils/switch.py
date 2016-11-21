@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 from __future__ import division
 
@@ -20,12 +20,15 @@ def chu(x, y):
     return x / y
 
 
-operator={"+":jia,"-":jian,"*":jia,"/":jia}
+operator = {"+": jia, "-": jian, "*": jia, "/": jia}
 
-def f(x,o,y):
-    print operator.get(o)(x,y)
 
-f(3,"/",2)
+def f(x, o, y):
+    print operator.get(o)(x, y)
+
+
+f(3, "/", 2)
+
 
 def operator(x, o, y):
     if o == "+":
@@ -38,4 +41,3 @@ def operator(x, o, y):
         print chu(x, y)
     else:
         pass
-
