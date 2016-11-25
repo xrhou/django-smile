@@ -45,3 +45,19 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+
+
+def my_print():
+    print ("hello world!")
+
+#
+# def band_listing(request):
+#     """A view of all bands."""
+#     bands = Band.objects.all()
+#     return render(request, 'polls/band_listing.html', {'bands': bands})
+#
+#
+# @login_required
+# def my_protected_view(request):
+#     """A view that can only be accessed by logged-in users"""
+#     return render(request, 'protected.html', {'current_user': request.user})
