@@ -18,6 +18,15 @@ class QuestionAdmin(admin.ModelAdmin):
     search_fields = ['question_text']
 
 
+#
+# class MemberAdmin(admin.ModelAdmin):
+#     """Customize the look of the auto-generated admin for the Member model"""
+#     list_display = ('name', 'instrument')
+#     list_filter = ('band',)
+
+
 # Register polls models here.
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
+# admin.site.register(Member, MemberAdmin)
+# admin.site.register(Band)
