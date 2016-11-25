@@ -44,7 +44,7 @@ try:
 
     with connection.cursor() as cursor:
         # read all date
-        sql = "select * from houxrusers "
+        sql = "select * from base_bank "
         cursor.execute(sql)
         result = cursor.fetchall()
 
