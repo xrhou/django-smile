@@ -21,7 +21,7 @@ import pymysql.cursors
 # connect to the database
 connection = pymysql.connect(host='ngaribata.mysql.rds.aliyuncs.com',
                              user='houxr',
-                             password='HxrOpDev2016_123456',
+                             password='HxrOpDev2016_',
                              db='eh_base_feature4',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)

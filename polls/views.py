@@ -3,6 +3,7 @@
 
 import datetime
 
+import pymysql
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -58,14 +59,21 @@ def current_time(request):
     print now.strftime("%Y-%m-%d %H:%M:%S %w")
     return render(request, 'polls/current_time.html', {'current_date': now})
 
-#
-# def band_listing(request):
-#     """A view of all bands."""
-#     bands = Band.objects.all()
-#     return render(request, 'polls/band_listing.html', {'bands': bands})
-#
-#
-# @login_required
-# def my_protected_view(request):
-#     """A view that can only be accessed by logged-in users"""
-#     return render(request, 'protected.html', {'current_user': request.user})
+
+# 查询数据库数据并显示
+def book_list(request):
+    db = pymysql.connect(host='ngaribata.mysql.rds.aliyuncs.com',
+                         user='houxr',
+                         password='HxrOpDev2016_',
+                         db='eh_base_feature4',
+                         charset='utf8',
+                         cursorclass=pymysql.cursors.DictCursor)
+    cursor = db.cursor()
+    sql = "select bankname from base_bank"
+    cursor.execute(sql)
+    names = cursor.fetchall()
+    print "SQL:"+sql
+    for row in names:
+        print(row)
+    db.close()
+    return render(request, 'polls/books.html', {'names': names})
