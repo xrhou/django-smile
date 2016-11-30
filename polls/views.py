@@ -1,3 +1,8 @@
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
+
+import datetime
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -47,8 +52,11 @@ def vote(request, question_id):
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
 
 
-def my_print():
-    print ("hello world!")
+# 当前时间
+def current_time(request):
+    now = datetime.datetime.now()
+    print now.strftime("%Y-%m-%d %H:%M:%S %w")
+    return render(request, 'polls/current_time.html', {'current_date': now})
 
 #
 # def band_listing(request):
