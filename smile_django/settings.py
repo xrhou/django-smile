@@ -29,7 +29,8 @@ ALLOWED_HOSTS = []
 # Application definition
 # python user PRC . 'modernrpc',
 INSTALLED_APPS = [
-    'polls.apps.PollsConfig',
+    'polls.apps.PollsConfig',  # polls model
+    'books.apps.BooksConfig',  # books model
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
