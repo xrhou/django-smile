@@ -1,0 +1,4 @@
+-- update books_publisher set country='USA';
+-- select * from books_publisher;
+-- ALTER TABLE books_author ADD COLUMN `mobile` varchar(20) NULL ;
+-- ALTER TABLE books_book ALTER COLUMN publication_date DROP NOT NULL;
