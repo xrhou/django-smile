@@ -38,9 +38,22 @@ class Author(models.Model):
         return u'%s%s' % (self.first_name, self.last_name)
 
 
+# 借书作者
+@python_2_unicode_compatible
+class Borrower(models.Model):
+    first_name = models.CharField(max_length=30, verbose_name='FirstName')
+    last_name = models.CharField(max_length=40, verbose_name='LastName')
+    mobile = models.CharField(max_length=20, blank=False, verbose_name='联系电话')
+    email = models.EmailField(blank=False, verbose_name='邮箱')
+
+    def __str__(self):
+        return u'%s%s' % (self.first_name, self.last_name)
+
+
 # 书
 @python_2_unicode_compatible
 class Book(models.Model):
+    bookNo = models.CharField(max_length=200, blank=True, verbose_name='编号')
     title = models.CharField(max_length=200, verbose_name='书名')
     authors = models.ManyToManyField(Author, verbose_name='作者')
     publisher = models.ForeignKey(Publisher, verbose_name='出版社')
@@ -48,3 +61,17 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+
+# 借书和借书者关系
+@python_2_unicode_compatible
+class BookAndBorrow():
+    bookNo = models.CharField(max_length=200, blank=True, verbose_name='编号')
+    title = models.CharField(max_length=200, verbose_name='书名')
+    borrower = models.ForeignKey(Borrower, verbose_name='借书人')
+    book = models.ForeignKey(Book, verbose_name="书名")
+    start_date = models.DateField(blank=False, null=True, default=False, verbose_name='借书日期')
+    end_date = models.DateField(blank=False, null=True, default=False, verbose_name='还书日期')
+
+    def __str__(self):
+        return "书名:" + self.title + ",借书人:" + self.borrower
