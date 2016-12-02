@@ -23,7 +23,7 @@ def search(request):
     errors = []
     if 'q' in request.GET and request.GET['q']:
         q = request.GET['q']
-        if not q or (q == ''):
+        if q is None or q == "":
             errors.append('Enter a search term.')
         elif len(q) > 20:
             errors.append('Please enter at most 20 characters.')
@@ -41,11 +41,11 @@ def contact_form(request):
 def contact(request):
     errors = []
     if request.method == 'POST':
-        if not request.POST.get('subject', ''):
+        if request.POST['subject'] is None or request.POST['subject'] == "":
             errors.append('Enter a subject.')
-        if not request.POST.get('message', ''):
+        if request.POST['message'] is None or request.POST['message'] == "":
             errors.append('Enter a message.')
-        if request.POST.get('email') and '@' not in request.POST['email']:
+        if request.POST['email'] is None or request.POST['email'] == "":
             errors.append('Enter a valid e-mail address.')
         if not errors:
             subject = request.POST['subject']
