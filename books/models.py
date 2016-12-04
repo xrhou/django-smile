@@ -71,6 +71,7 @@ class Relation(models.Model):
     borrower_name = models.ForeignKey(Borrower, verbose_name='借书人')
     start_date = models.DateField(blank=True, verbose_name='借书日期')
     end_date = models.DateField(blank=True, verbose_name='还书日期')
+    borrower_flag=models.CharField(max_length=100, verbose_name='备注')
 
     def __str__(self):
         return u'%s,借书人:%s' % (self.book_name, self.borrower_name)
