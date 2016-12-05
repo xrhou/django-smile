@@ -11,6 +11,7 @@ from books.models import Book
 ONE_PAGE_OF_DATA = 10
 
 
+# 图书首页面
 def index(request):
     try:
         curPage = int(request.GET.get('curPage', '1'))
@@ -28,7 +29,7 @@ def index(request):
 
     startPos = (curPage - 1) * ONE_PAGE_OF_DATA
     endPos = startPos + ONE_PAGE_OF_DATA
-    books = Book.objects.all().order_by('-id')[startPos:endPos]
+    books = Book.objects.all().order_by('-id')[startPos: endPos]
 
     if curPage == 1 and allPage == 1:  # 标记1
         allPostCounts = Book.objects.count()
