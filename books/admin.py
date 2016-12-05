@@ -21,7 +21,7 @@ class PublisherAdmin(admin.ModelAdmin):
 
 # 书管理显示
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'book_no', 'publisher', 'publication_date')
+    list_display = ('title', 'book_no', 'publisher', 'publication_date', 'id')
     list_filter = ('publication_date',)
     date_hierarchy = 'publication_date'
     ordering = ('-publication_date',)
@@ -38,9 +38,9 @@ class BorrowerAdmin(admin.ModelAdmin):
 
 # 借书者管理
 class RelationAdmin(admin.ModelAdmin):
-    list_display = ('book_no', 'book_name', 'borrower_name', 'start_date', 'end_date')
+    list_display = ('book_no', 'book_name', 'borrower_name', 'start_date', 'end_date', 'borrower_flag')
     search_fields = ('borrower_name',)  # 查询借书者
-    raw_id_fields = ('book_name','borrower_name',)
+    raw_id_fields = ('book_name', 'borrower_name',)
 
 
 admin.site.register(Publisher, PublisherAdmin)

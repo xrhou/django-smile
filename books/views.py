@@ -7,12 +7,36 @@ from django.shortcuts import render
 
 from books.models import Book
 
-
 # Create your views here.
+ONE_PAGE_OF_DATA = 10
+
 
 def index(request):
-    books = Book.objects.all()
-    return render(request, 'books/index.html', {'books': books})
+    try:
+        curPage = int(request.GET.get('curPage', '1'))
+        allPage = int(request.GET.get('allPage', '1'))
+        pageType = str(request.GET.get('pageType', ''))
+    except ValueError:
+        curPage = 1
+        allPage = 1
+        pageType = ''
+
+    if pageType == 'pageDown':
+        curPage += 1
+    elif pageType == 'pageUp':
+        curPage -= 1
+
+    startPos = (curPage - 1) * ONE_PAGE_OF_DATA
+    endPos = startPos + ONE_PAGE_OF_DATA
+    books = Book.objects.all()[startPos:endPos]
+
+    if curPage == 1 and allPage == 1:  # 标记1
+        allPostCounts = Book.objects.count()
+        allPage = allPostCounts / ONE_PAGE_OF_DATA
+        remainPost = allPostCounts % ONE_PAGE_OF_DATA
+        if remainPost > 0:
+            allPage += 1
+    return render(request, 'books/index.html', {'books': books, 'allPage': allPage, 'curPage': curPage})
 
 
 def search_form(request):

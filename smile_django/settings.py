@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding:utf-8 -*-
+
 """
 Django settings for smile_django project.
 
@@ -11,7 +14,6 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -73,10 +75,24 @@ WSGI_APPLICATION = 'smile_django.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
+    # connection sqlite3
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+
+    # connection mysql
+    # 'default': {
+    #     'ENGINE': 'mysql.connector.django',  # or mysql.connector.django
+    #     'NAME': 'eh_book',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     'HOST': '192.168.2.117',
+    #     'PORT': 3306,
+    #     'OPTIONS':{
+    #         'autocommit': True,
+    #     },
+    # }
 }
 
 # Password validation
