@@ -21,7 +21,7 @@ class PublisherAdmin(admin.ModelAdmin):
 
 # 书管理显示
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'book_no', 'publisher', 'publication_date', 'id')
+    list_display = ('title', 'book_no', 'publisher', 'publication_date', 'id', 'create_date')
     list_filter = ('publication_date',)
     date_hierarchy = 'publication_date'
     ordering = ('-publication_date',)

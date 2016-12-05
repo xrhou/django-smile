@@ -58,6 +58,7 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author, verbose_name='作者')
     publisher = models.ForeignKey(Publisher, verbose_name='出版社')
     publication_date = models.DateField(blank=True, verbose_name='出版日期')
+    create_date = models.DateField(blank=True, verbose_name='创建日期')
 
     def __str__(self):
         return self.title
