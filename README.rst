@@ -2,7 +2,7 @@
 Polls
 =====
 
-Polls is a simple Django app to conduct Web-based polls. For each
+Polls is a simple Django app to conduct Web-based Django. For each
 question, visitors can choose between a fixed number of answers.
 
 Detailed documentation is in the "docs" directory.
