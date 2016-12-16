@@ -64,7 +64,7 @@ class Book(models.Model):
         return self.title
 
 
-# 借书和借书者关系
+# 书和借书者关系
 @python_2_unicode_compatible
 class Relation(models.Model):
     book_no = models.CharField(max_length=200, blank=True, verbose_name='编号')
