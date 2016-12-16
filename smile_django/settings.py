@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3+&vf!&6(zfwh65eiqetc!0=zkk7nesoc3g-p03gwwd9xr++pw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.2.82',]
+ALLOWED_HOSTS = ['127.0.0.1','localhost','192.168.2.143',]
 
 # Application definition
 # python user PRC . 'modernrpc',
