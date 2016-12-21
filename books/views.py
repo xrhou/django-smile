@@ -7,7 +7,8 @@ from django.shortcuts import render
 
 from books.models import Book
 
-# Create your views here.
+# Create all views here.
+
 ONE_PAGE_OF_DATA = 10
 
 
