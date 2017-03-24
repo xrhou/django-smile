@@ -83,16 +83,17 @@ DATABASES = {
 
     # connection mysql
     # 'default': {
-    #     'ENGINE': 'mysql.connector.django',  # or mysql.connector.django
-    #     'NAME': 'eh_book',
+    #     'ENGINE': 'django.db.backends.mysql',  # or mysql.connector.django
+    #     'NAME': 'books',
     #     'USER': 'root',
     #     'PASSWORD': 'root',
-    #     'HOST': '192.168.2.117',
+    #     'HOST': '127.0.0.1',
     #     'PORT': 3306,
     #     'OPTIONS':{
     #         'autocommit': True,
     #     },
     # }
+
 }
 
 # Password validation
