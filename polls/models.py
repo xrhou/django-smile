@@ -27,6 +27,10 @@ class Question(models.Model):
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
 
+    class Meta:
+        verbose_name_plural = '问题'
+        verbose_name = '问题'
+
 
 # Create Choice models here.
 @python_2_unicode_compatible
@@ -37,3 +41,7 @@ class Choice(models.Model):
 
     def __str__(self):
         return self.choice_text
+
+    class Meta:
+        verbose_name_plural = '选票'
+        verbose_name = '选票'
