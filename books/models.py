@@ -23,6 +23,8 @@ class Publisher(models.Model):
 
     # 默认排序方式
     class Meta:
+        verbose_name = '出版社'
+        verbose_name_plural = '出版社'
         ordering = ['name']
 
 
@@ -37,6 +39,9 @@ class Author(models.Model):
     def __str__(self):
         return u'%s%s' % (self.first_name, self.last_name)
 
+    class Meta:
+        verbose_name='作者'
+        verbose_name_plural='作者'
 
 # 借书作者
 @python_2_unicode_compatible
@@ -48,6 +53,10 @@ class Borrower(models.Model):
 
     def __str__(self):
         return self.borrower_name
+
+    class Meta:
+        verbose_name='借书人'
+        verbose_name_plural='借书人'
 
 
 # 书
@@ -63,6 +72,9 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name='书'
+        verbose_name_plural='书'
 
 # 书和借书者关系
 @python_2_unicode_compatible
@@ -76,3 +88,7 @@ class Relation(models.Model):
 
     def __str__(self):
         return u'%s,借书人:%s' % (self.book_name, self.borrower_name)
+
+    class Meta:
+        verbose_name='所借图书'
+        verbose_name_plural='所借图书'
