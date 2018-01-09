@@ -26,13 +26,14 @@ SECRET_KEY = '3+&vf!&6(zfwh65eiqetc!0=zkk7nesoc3g-p03gwwd9xr++pw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','192.168.2.143',]
+ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
 # Application definition
 # python user PRC . 'modernrpc',
 INSTALLED_APPS = [
     'polls.apps.PollsConfig',  # polls model
     'books.apps.BooksConfig',  # books model
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,17 +83,17 @@ DATABASES = {
     }
 
     # connection mysql
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',  # or mysql.connector.django
-    #     'NAME': 'books',
-    #     'USER': 'root',
-    #     'PASSWORD': 'root',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': 3306,
-    #     'OPTIONS':{
-    #         'autocommit': True,
-    #     },
-    # }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.mysql',  # or mysql.connector.django
+    #    'NAME': 'books',
+    #    'USER': 'root',
+    #    'PASSWORD': 'root',
+    #    'HOST': '127.0.0.1',
+    #    'PORT': 3306,
+    #    'OPTIONS':{
+    #        'autocommit': True,
+    #    },
+    #}
 
 }
 
@@ -121,7 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'zh-Hans'
 
 # User China zone
-TIME_ZONE = 'UTC+8'
+# TIME_ZONE = 'UTC+8'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
