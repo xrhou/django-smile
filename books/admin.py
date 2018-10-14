@@ -48,6 +48,7 @@ class RelationAdmin(admin.ModelAdmin):
     list_per_page = 10
 
 
+# Register books models here.
 admin.site.register(Publisher, PublisherAdmin)
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Book, BookAdmin)

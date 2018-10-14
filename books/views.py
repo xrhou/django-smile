@@ -8,9 +8,7 @@ from django.shortcuts import render
 from books.models import Book
 
 # Create all views here.
-
 ONE_PAGE_OF_DATA = 10
-
 
 # 图书首页面
 def index(request):
