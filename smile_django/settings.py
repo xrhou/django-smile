@@ -31,8 +31,8 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost']
 # Application definition
 # python user PRC . 'modernrpc',
 INSTALLED_APPS = [
-    'books.apps.BooksConfig',  # books model
     'polls.apps.PollsConfig',  # polls model
+    'books.apps.BooksConfig',  # books model
 
     'django.contrib.admin',
     'django.contrib.auth',
